@@ -104,31 +104,13 @@
             <p>Wish You Always Be Successful!</p>
             <p onclick="unmuteVideo()" style="color: purple;">Click me hee heez</p>
         </div>
-        <div id="player"></div>  <script>
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/iframe_api"; // Use HTTPS!
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        <audio id="player" src="happy-birthday.mp3" autoplay loop></audio>
 
-  var player;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      height: '390',
-      width: '640',
-      videoId: 'WWEqd9Il0TE', // Your YouTube video ID
-      events: {
-        'onReady': onPlayerReady
-      }
+       <script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const audio = document.getElementById("birthdaySong");
+        audio.play().catch(error => console.log("Autoplay prevented:", error));
     });
-  }
-
-  function onPlayerReady(event) {
-    event.target.mute(); // Mute for best chance of autoplay
-    event.target.playVideo(); // Attempt to autoplay
-  }
-function unmuteVideo() {
-    player.unMute();
-  }
 </script>
         <script>
             function createHeart() {
